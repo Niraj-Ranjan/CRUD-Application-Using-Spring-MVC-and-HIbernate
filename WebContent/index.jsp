@@ -10,5 +10,9 @@
 <h1  >this is vc</h1>
 
 <a href="showFormForAdd"> add info</a>
+<a href="showalllist"> LIST STUDENT </a>
+<a href="UserLoginForm"> Login </a>
+<a href="UserFormForAdd"> Register </a>
+
 </body>
 </html>

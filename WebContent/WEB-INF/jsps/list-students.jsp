@@ -11,11 +11,8 @@
 </head>
 <body>
 	<h1 align="center">List Students</h1>
-	<button
-		onclick="window.location.href = 'showFormForAdd'; return false;">Add
-		Student</button>
+	
 
-	<hr />
 
 	<center>
 		<table border="1">
@@ -28,14 +25,16 @@
 				<th>Address</th>
 				<th>Action</th>
 			</tr>
-			<c:forEach items="${studentsList}" var="s">
-				<c:url var="updateLink" value="/student/displayUpdateForm.html">
+			<c:forEach items="${thestudent}" var="s">
+			
+			<c:url var="updateLink" value="updateRecord">
 					<c:param name="studentId" value="${s.id}" />
 				</c:url>
-
-				<c:url var="deleteLink" value="/student/displayDeleteForm.html">
+ 
+				<c:url var="deleteLink" value="deleteRecord">
 					<c:param name="studentId" value="${s.id}" />
 				</c:url>
+				
 				<tr>
 					<td>${s.name}</td>
 					<td>${s.email}</td>
@@ -43,9 +42,9 @@
 					<td>${s.hobbies}</td>
 					<td>${s.city}</td>
 					<td>${s.address}</td>
-					<td><a href="${updateLink}">Update</a> | <a
-						href="${deleteLink}"
-						onclick="if(!(confirm('Are you sure want to delete this Student permanently?'))) return false">Delete</a></td>
+					<td>
+					<a href ="${updateLink}">Update</a> | <a onclick="if(!(confirm('Are you sure want to delete'))) return false" href ="${deleteLink}">Delete</a>
+					</td>
 				</tr>
 			</c:forEach>
 		</table>
